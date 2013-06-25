@@ -29,3 +29,19 @@ $ rosrun image_view image_view image:=/camera/rgb/image_color
 $ rosrun image_view image_view image:=/camera/depth/image
 ```
 
+Troubleshooting
+===============
+
+Failed to set USB interface
+---------------------------
+
+This errro may occur when executing the `roslaunch openni...` command.
+One possible solution is to load corresponding kernel modules:
+
+```bash
+$ sudo modprobe -r gspca_kinect
+$ sudo modprobe -r gspca_main
+```
+
+Another source of this problem is that the ASUS Xtion has [problems with USB 3.0 interface](http://reconstructme.net/2012/10/13/asus-xtion-usb-3-0-hotfix/).
+
