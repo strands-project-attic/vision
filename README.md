@@ -36,12 +36,15 @@ Failed to set USB interface
 ---------------------------
 
 This errro may occur when executing the `roslaunch openni...` command.
-One possible solution is to load corresponding kernel modules:
+
+The ASUS Xtion has [firmware problems with USB 3.0 interfaces](http://reconstructme.net/2012/10/13/asus-xtion-usb-3-0-hotfix/).
+Befor trying to patch the firmware (on Windows), just plug it into some other USB interface.
+Modern laptops have some USB 3.0 and some USB 2.0 interfaces, so you might be lucky to hit a 2.0 one which just works.
+
+Another possible solution, reported to work for some, is to load the following kernel modules:
 
 ```bash
 $ sudo modprobe -r gspca_kinect
 $ sudo modprobe -r gspca_main
 ```
-
-Another source of this problem is that the ASUS Xtion has [problems with USB 3.0 interface](http://reconstructme.net/2012/10/13/asus-xtion-usb-3-0-hotfix/).
 
