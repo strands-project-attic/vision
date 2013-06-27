@@ -24,15 +24,8 @@ void imgcb(const sensor_msgs::Image::ConstPtr& msg)
         // for visualization purposes.
         double max = 0.0;
         cv::minMaxLoc(cv_ptr->image, 0, &max, 0, 0);
-
-        size_t w = cv_ptr->image.cols;
-        size_t h = cv_ptr->image.rows;
-        cv::Mat normalized(h, w, CV_32F/* cv_ptr->image.type */);
-        for(size_t y = 0 ; y < h ; ++y) {
-            for(size_t x = 0 ; x < w ; ++x) {
-                normalized.at<float>(y,x) = cv_ptr->image.at<float>(y,x)/max;
-            }
-        }
+        cv::Mat normalized;
+        cv_ptr->image.convertTo(normalized, CV_32F, 1.0/max, 0)  ;
 
         cv::imshow("foo", normalized);
         cv::waitKey(1);
