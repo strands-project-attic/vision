@@ -10,7 +10,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs cv_bridge)
 # find_package(Boost REQUIRED COMPONENTS system)
 
 find_package(OpenCV)
-
+find_package(PCL)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -65,6 +65,7 @@ catkin_package(
 include_directories(include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
 )
 
 ## Declare a cpp library
@@ -76,6 +77,7 @@ include_directories(include
 add_executable(show_ir_node src/show_ir.cpp)
 add_executable(show_rgb_node src/show_rgb.cpp)
 add_executable(show_depth_node src/show_depth.cpp)
+add_executable(object_segmentation_node src/obj_segment/get_obj_clusters.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -85,6 +87,7 @@ add_executable(show_depth_node src/show_depth.cpp)
 target_link_libraries(show_ir_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 target_link_libraries(show_rgb_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 target_link_libraries(show_depth_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(object_segmentation_node ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
 #############
 ## Install ##

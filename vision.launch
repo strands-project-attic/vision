@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find openni_launch)/launch/openni.launch" />
+  <node name="openni_node" pkg="openni_camera" type="openni_node" />
+  <node name="show_depth_node" pkg="vision" type="show_depth_node" />
+</launch>
