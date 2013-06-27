@@ -70,7 +70,7 @@ Creating a new project in ROS
 -----------------------------
 
 ### Disclaimer
-I don't know all the terminologies yet, I may use wrong words for things.
+I don't know all of the ROS terminologies yet, I may use wrong words for things.
 
 ### Creating a package
 First, creating a package:
