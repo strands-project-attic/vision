@@ -146,3 +146,21 @@ $ rosrun vision test_ir_node
 ```
 
 It should greet you warmly.
+
+Face Detection using cob_perception 
+===================================
+
+1. `git clone http://git.mech.kuleuven.be/robotics/orocos_kinematics_dynamics.git` and do `rosmake`
+2. `git clone https://github.com/ipa320/cob_perception_common.git` and check out the groovy branch `git checkout groovy_dev` and do `rosmake`
+3. `git clone https://github.com/ipa320/cob_people_perception.git` and check out the groovy branch `git checkout groovy_dev` and do `rosmake`
+4. use `roslaunch openni_launch openni.launch` to start kinect
+5. `roslaunch cob_people_detection people_detection.launch`
+
+Visualizing a color point cloud of scene using ROS & RVIZ
+=========================================================
+
+1. `roslaunch openni_launch openni.launch`
+2. `rosrun rqt_reconfigure rqt_reconfigure` and select /camera/driver from the drop-down menu. Enable the depth_registration checkbox. 
+3. `rosrun rviz rviz`
+4.  Set the Fixed Frame (top left of rviz window) to camera_depth_optical_frame.  
+5.  Add a PointCloud2 display and set PointCloud2 topic to /camera/depth_registered/points. Set Color Transformer to RGB8. You should see a color, 3D point cloud of your scene. 
