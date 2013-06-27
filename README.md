@@ -32,10 +32,22 @@ $ rosrun image_view image_view image:=/camera/depth/image
 Troubleshooting
 ===============
 
+USB interface is not supported
+------------------------------
+
+Asus Xtion PRO live model 601 which is mounted on METRA robots fails to work with ROS. The [solution we found on the internet](http://answers.ros.org/question/61211/problem-with-xtion-pro-live-and-openni_camera/) is the following:
+
+    Edit the file: /etc/openni/Globaldefauts.ini (make a backup first)
+
+    find the line UsbInterface and uncomment it to force it to use 'BULK' endpoints: UsbInterface=2
+
+We tried this already with one of the robot and it works.
+
+
 Failed to set USB interface
 ---------------------------
 
-This errro may occur when executing the `roslaunch openni...` command.
+This error may occur when executing the `roslaunch openni...` command.
 
 The ASUS Xtion has [firmware problems with USB 3.0 interfaces](http://reconstructme.net/2012/10/13/asus-xtion-usb-3-0-hotfix/).
 Befor trying to patch the firmware (on Windows), just plug it into some other USB interface.
