@@ -1,7 +1,7 @@
 kinect
 ======
 
-Stuff to get the "kinect" data published in ros, and maybe do stuff with it.
+Stuff to get the "kinect/ASUS" data published in ros, and maybe do stuff with it.
 
 Installation
 ============
