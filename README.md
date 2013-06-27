@@ -6,7 +6,7 @@ Stuff to get the "kinect/ASUS" data published in ros, and maybe do stuff with it
 Installation
 ============
 
-What previously was known as `openni_kinect` is now split into two packages: 1.[openni-camera](http://www.ros.org/wiki/openni_camera) 2.[openni-launch](http://www.ros.org/wiki/openni_launch).
+What was previously known as `openni_kinect` is now split into two packages: 1.[openni-camera](http://www.ros.org/wiki/openni_camera) 2.[openni-launch](http://www.ros.org/wiki/openni_launch).
 Install them:
 
 ```bash
