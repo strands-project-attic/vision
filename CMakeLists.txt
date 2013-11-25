@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs cv_bridge)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+set(PCL_DIR "/opt/ros/groovy/share/pcl-1.6")
 find_package(OpenCV)
 find_package(PCL)
 
